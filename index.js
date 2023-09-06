@@ -5,6 +5,10 @@ import db from './db.js';
 const app = express();
 
 app.get('/', (req, res) => {
+    res.json("Server is live!")
+})
+
+app.get('/posts', (req, res) => {
     const q = 'SELECT * FROM posts ORDER BY timestamp';
 
     db.query(q, (err, data) => {
