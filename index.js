@@ -21,4 +21,6 @@ app.listen(5000, ()=>{
     console.log('Server is running on port 5000');
 })
 
-setInterval(CallJugantorCampus, 1000 * 60 * 30 )
+
+// REGULAR EVENT CALLS
+setInterval(CallJugantorCampus, 1000 * 15 )
