@@ -2,6 +2,9 @@ import express from 'express'
 import { CallJugantorCampus } from './jugantor/campus.js'
 import db from './db.js';
 import { CallJugantorSports } from './jugantor/sports.js';
+import cron from 'node-cron';
+
+
 
 const app = express();
 
@@ -24,10 +27,14 @@ app.listen(5000, ()=>{
 
 
 // REGULAR EVENT CALLS
-setInterval(()=>{
-    CallJugantorCampus()
-    CallJugantorSports()
-    
-}, 1000 * 60 )
+const task = cron.schedule('* * * * *', () => {
+    // Your task logic goes here
+    CallJugantorCampus();
+    CallJugantorSports();
+  });
+  
+  // Start the cron job
+  task.start();
+  
 
 

@@ -17,7 +17,9 @@ export const CallJugantorCampus = ()=>{
     const title = $('#news-title').attr('data-title');
     const content = $('#myText').text()
     const photo = $('.figure-img').attr('src') || null;
-    const q = "INSERT INTO posts (id, title, content, photo, type) VALUES (?,?, ?, ?)"
+
+
+    const q = "INSERT INTO posts (id, title, content, photo, type) VALUES (?,?, ?, ?, ?)"
     const values = [ url, title, content, photo, 'education']
     db.query(q, values, (err, result)=>{
         if(err) return console.log("Checked: Already indexed");

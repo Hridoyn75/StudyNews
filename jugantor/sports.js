@@ -19,12 +19,12 @@ export const CallJugantorSports = ()=>{
     const photo = $('.figure-img').attr('src') || null;
 
 
-    const q = "INSERT INTO posts (id, title, content, photo, type) VALUES (?,?, ?, ?)"
+    const q = "INSERT INTO posts (id, title, content, photo, type) VALUES (?,?, ?, ?, ?)"
     const values = [ url, title, content, photo, 'sports']
-    // db.query(q, values, (err, result)=>{
-    //     if(err) return console.log("Checked: Already indexed");
-    //     console.log("New post saved on database"); 
-    // })
+    db.query(q, values, (err, result)=>{
+        if(err) return console.log("Checked: Already indexed");
+        console.log("New post saved on database"); 
+    })
   })
   .catch(error=>{
     console.log(error)
