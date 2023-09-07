@@ -3,8 +3,8 @@ import cheerio from 'cheerio'
 import db from '../db.js';
 
 
-export const CallJugantorCampus = ()=>{
-    axios.get('https://www.jugantor.com/campus')
+export const CallJugantorSports = ()=>{
+    axios.get('https://www.jugantor.com/sports')
 .then(response => {
   const html = response.data;
   const $ = cheerio.load(html);
@@ -17,12 +17,14 @@ export const CallJugantorCampus = ()=>{
     const title = $('#news-title').attr('data-title');
     const content = $('#myText').text()
     const photo = $('.figure-img').attr('src') || null;
+
+
     const q = "INSERT INTO posts (id, title, content, photo, type) VALUES (?,?, ?, ?)"
-    const values = [ url, title, content, photo, 'education']
-    db.query(q, values, (err, result)=>{
-        if(err) return console.log("Checked: Already indexed");
-        console.log("New post saved on database"); 
-    })
+    const values = [ url, title, content, photo, 'sports']
+    // db.query(q, values, (err, result)=>{
+    //     if(err) return console.log("Checked: Already indexed");
+    //     console.log("New post saved on database"); 
+    // })
   })
   .catch(error=>{
     console.log(error)
