@@ -23,4 +23,4 @@ app.listen(5000, ()=>{
 
 
 // REGULAR EVENT CALLS
-setInterval(CallJugantorCampus, 1000 * 15 )
+setInterval(CallJugantorCampus, 1000 * 60 )
