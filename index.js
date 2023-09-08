@@ -2,7 +2,6 @@ import express from 'express'
 import { CallJugantorCampus } from './jugantor/campus.js'
 import db from './db.js';
 import { CallJugantorSports } from './jugantor/sports.js';
-import cron from 'node-cron';
 
 
 
@@ -25,7 +24,7 @@ app.get('/posts', (req, res) => {
 
 
 app.get('/script', (req, res) => {
-    
+
     CallJugantorCampus();
     CallJugantorSports();
     res.send("Script activated!")
