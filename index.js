@@ -21,20 +21,25 @@ app.get('/posts', (req, res) => {
     })
 })
 
+
+
+
+app.get('/script', (req, res) => {
+    
+    CallJugantorCampus();
+    CallJugantorSports();
+    res.send("Script activated!")
+})
+
+
+
+
 app.listen(5000, ()=>{
     console.log('Server is running on port 5000');
 })
 
 
-// REGULAR EVENT CALLS
-const task = cron.schedule('* * * * *', () => {
-    // Your task logic goes here
-    CallJugantorCampus();
-    CallJugantorSports();
-  });
-  
-  // Start the cron job
-  task.start();
+
   
 
 
