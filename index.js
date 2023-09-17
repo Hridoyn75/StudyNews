@@ -2,6 +2,9 @@ import express from "express";
 import { CallJugantorCampus } from "./jugantor/campus.js";
 import db from "./db.js";
 import { CallJugantorSports } from "./jugantor/sports.js";
+import { CallJugantorFunTime } from "./jugantor/funtime.js";
+import { CallJugantorTech } from "./jugantor/tech.js";
+import { CallJugantorInternational } from "./jugantor/international.js";
 
 const app = express();
 
@@ -43,6 +46,9 @@ app.get("/post/:id", (req, res) => {
 app.get("/script", (req, res) => {
   CallJugantorCampus();
   CallJugantorSports();
+  CallJugantorFunTime();
+  CallJugantorTech();
+  CallJugantorInternational();
   res.send("Script activated!");
 });
 
