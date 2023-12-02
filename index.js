@@ -45,10 +45,10 @@ app.get("/post/:id", (req, res) => {
 
 app.get("/script", (req, res) => {
   CallJugantorCampus();
-  CallJugantorSports();
-  CallJugantorFunTime();
-  CallJugantorTech();
-  CallJugantorInternational();
+  // CallJugantorSports();
+  // CallJugantorFunTime();
+  // CallJugantorTech();
+  // CallJugantorInternational();
   res.send("Script activated!");
 });
 
